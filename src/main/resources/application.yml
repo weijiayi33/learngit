@@ -1,0 +1,39 @@
+ spring:
+   datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/office
+     username: root
+     password: root
+   mvc:
+     view:
+       suffix: .jsp
+       prefix: /WEB-INF/jsp/
+   thymeleaf:
+     cache: false
+     enabled: false
+   jpa:
+     hibernate:
+       ddl-auto: update
+   redis:
+         host: localhost
+         port: 6379
+         jedis:
+           pool:
+             max-idle: 300
+             max-active: 600
+             max-wait: 300
+   data:
+     mongodb:
+       host: localhost
+       port: 27017
+       database: wjy
+   freemarker:
+       request-context-attribute: req  #req访问request
+       suffix: .html  #后缀名
+       content-type: text/html
+       enabled: true
+       cache: false #缓存配置
+       template-loader-path: classpath:/templates/ #模板加载路径 按需配置
+       charset: UTF-8 #编码格式
+       settings:
+         number_format: '0.##'   #数字格式化，无小数点
